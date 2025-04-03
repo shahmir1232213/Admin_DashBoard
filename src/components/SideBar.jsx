@@ -1,26 +1,27 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link,NavLink } from 'react-router-dom'
 import {SiShopware} from 'react-icons/si'
 import {MdOutlineCancel} from 'react-icons/md'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import {links} from '../data/dummy'
+import { DataContext } from '../contexts/ContextProvider'
 
 const SideBar = () => {
-  const activemenu = true;
+  const {activemenu,setActiveMenu} = useContext(DataContext);
   return (
     <div className='h-screen bg-white overflow-auto'>
       {activemenu && (<>
-        <div className='flex border-2 border-red-500 items-center'>
-          <Link to='/' onClick={()=>{}} className=' flex items-center w-[19rem] gap-3 p-3 border-2 border-blue-500'>
+        <div className='flex font-extrabold border-2 border-red-500 items-center justify-between p-3'>
+          <Link to='/' onClick={()=>{}} className=' flex items-center gap-3 p-3 border-2 border-blue-500'>
             <SiShopware /><span>Shoppy</span>
           </Link>
           <TooltipComponent content={"Menu"} position="BottomCenter">
-            <button type='button' onClick={()=>{}}>
+            <button type='button' onClick={()=>{setActiveMenu(false)}}>
               <MdOutlineCancel size={25} />
             </button>
           </TooltipComponent>
         </div>
-        <div className='border-2 border-sky-700 mt-[60px]'>
+        <div className='border-2 border-sky-700 mt-[60px] pb-[30px]'>
           {links.map((items)=>{
             return (
               <div key={items.title}>
@@ -42,7 +43,6 @@ const SideBar = () => {
           })}
         </div>
       </>)
-      
       }
     </div>
   )
