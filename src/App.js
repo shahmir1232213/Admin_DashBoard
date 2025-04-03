@@ -5,6 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import SideBar from './components/SideBar';
 import Navbar from './components/Navbar';
 import { DataContext } from './contexts/ContextProvider';
+import Ecomerce from './pages/Ecomerce';
 
 import './App.css';
 const App = () => {
@@ -23,9 +24,10 @@ const App = () => {
         : <div className=''><Navbar /></div>
         
       }
+      <Routes>
+        <Route path='/ecommerce' element={<Ecomerce />} />
+      </Routes>
     </BrowserRouter>
-    
-
   )
 }
 

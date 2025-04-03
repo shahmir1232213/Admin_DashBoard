@@ -16,7 +16,7 @@ const SideBar = () => {
             <SiShopware /><span>Shoppy</span>
           </Link>
           <TooltipComponent content={"Menu"} position="BottomCenter">
-            <button type='button' onClick={()=>{setActiveMenu(false)}}>
+            <button type='button' onClick={()=>{setActiveMenu(false)}} className='hover:bg-gray-100 p-3 rounded-full'>
               <MdOutlineCancel size={25} />
             </button>
           </TooltipComponent>
@@ -28,13 +28,13 @@ const SideBar = () => {
                   <p className='ml-2 border-2 border-red-500 uppercase mt-4 text-gray-400 font-bold'>{items.title}</p>
                 {items.links.map((link)=>{
                   return(
-                    <NavLink className='block flex items-center gap-2 mt-5 ml-7'
+                    <NavLink className='block flex items-center gap-2 mt-5 ml-7 pt-2 pb-2 hover:bg-gray-100'
                       to={`/${link.name}`}
                       key={link.name}
                       onClick={()=>{}}
                     >
                       {link.icon}
-                      <span className='capitalize text-gray-700 font-semibold'>{link.name}</span>
+                      <span className='capitalize text-gray-700 font-semibold w-[100%] '>{link.name}</span>
                     </NavLink>
                   )
                 })}
