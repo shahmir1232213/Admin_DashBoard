@@ -29,7 +29,7 @@ const NavButton = ({title,icon,color,customFunc,dotColor})=>{
 const Navbar = () => {
   const {activemenu,setActiveMenu} = useContext(DataContext);
   return (
-    <div className='flex justify-between items-center p-2 border-2 border-red-500'>
+    <div className='flex justify-between items-center p-2 border-red-500'>
       <NavButton 
           icon={<AiOutlineMenu />} 
           title={"Menu"}
@@ -69,7 +69,7 @@ const Navbar = () => {
           >
           </NavButton>
           <TooltipComponent content={"Profile"} position='BottomCenter'>
-          <div className='border-2 ml-[0.5rem] border-yellow-500 flex items-center gap-2'>
+          <div className='ml-[0.5rem] border-yellow-500 flex items-center gap-2'>
             <img className='rounded-full w-12 h-12'
               src={avatar}
             />

@@ -11,8 +11,8 @@ const SideBar = () => {
   return (
     <div className='h-screen bg-white overflow-auto'>
       {activemenu && (<>
-        <div className='flex font-extrabold border-2 border-red-500 items-center justify-between p-3'>
-          <Link to='/' onClick={()=>{}} className=' flex items-center gap-3 p-3 border-2 border-blue-500'>
+        <div className='flex font-extrabold  border-red-500 items-center justify-between p-3'>
+          <Link to='/' onClick={()=>{}} className=' flex items-center gap-3 p-3 border-blue-500'>
             <SiShopware /><span>Shoppy</span>
           </Link>
           <TooltipComponent content={"Menu"} position="BottomCenter">
@@ -21,11 +21,11 @@ const SideBar = () => {
             </button>
           </TooltipComponent>
         </div>
-        <div className='border-2 border-sky-700 mt-[60px] pb-[30px]'>
+        <div className=' border-sky-700 mt-[60px] pb-[30px]'>
           {links.map((items)=>{
             return (
               <div key={items.title}>
-                  <p className='ml-2 border-2 border-red-500 uppercase mt-4 text-gray-400 font-bold'>{items.title}</p>
+                  <p className='ml-2  border-red-500 uppercase mt-4 text-gray-400 font-bold'>{items.title}</p>
                 {items.links.map((link)=>{
                   return(
                     <NavLink className='block flex items-center gap-2 mt-5 ml-7 pt-2 pb-2 hover:bg-gray-100'

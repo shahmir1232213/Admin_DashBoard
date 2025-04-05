@@ -6,29 +6,29 @@ import SideBar from './components/SideBar';
 import Navbar from './components/Navbar';
 import { DataContext } from './contexts/ContextProvider';
 import Ecomerce from './pages/Ecomerce';
-
+import Employees from './pages/Employees';
 import './App.css';
+
 const App = () => {
-  let {activemenu} = React.useContext(DataContext);
+  let { activemenu } = React.useContext(DataContext);
+
   return (
     <BrowserRouter>
-      <div className='absolute bottom-5 right-3 border-2 border-red-500 rounded-[50%]'>
-        <TooltipComponent content="Settings">
-          <button >
-            <FiSettings size={40} />
-          </button>
-       </TooltipComponent>
+      <div className="app-container flex">
+        {activemenu && <div className="sidebar w-[300px]"><SideBar /></div>}
+        <div className="main-content flex-1">
+          {/* Navbar should always be visible */}
+          <Navbar />
+          <div className="content-area">
+            <Routes>
+              <Route path="/ecommerce" element={<Ecomerce />} />
+              <Route path="/employees" element={<Employees />} />
+            </Routes>
+          </div>
+        </div>
       </div>
-      {
-        activemenu ? <div className='border-2 border-green-300 w-[30vw]'><SideBar/></div>
-        : <div className=''><Navbar /></div>
-        
-      }
-      <Routes>
-        <Route path='/ecommerce' element={<Ecomerce />} />
-      </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({color,bgColor,borderRadius,text,height,width,fontSize,marginTop}) => {
+const Button = ({color,bgColor,borderRadius,text,height,width,fontSize}) => {
   return (
     <button
       style={{
@@ -9,7 +9,6 @@ const Button = ({color,bgColor,borderRadius,text,height,width,fontSize,marginTop
         borderRadius: borderRadius,
         height: height,
         width: width,
-        marginTop: marginTop,
         fontSize: fontSize,
         textAlign: 'center', // Centers text horizontally (not needed with flexbox)
         display: 'flex', // Enables flexbox
