@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const captinRoutes = require('./routes/captinRoutes');
+const rideRoutes = require('./routes/rideRoutes');
+const userRoutes = require('./routes/userRoutes');
 const cors = require('cors');
 const connectToSQLServer = require('./config/sql');
 
@@ -11,6 +13,8 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/captins', captinRoutes);
+app.use('/rides',rideRoutes);
+app.use('/users',userRoutes)
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

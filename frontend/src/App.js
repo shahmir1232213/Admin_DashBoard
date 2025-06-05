@@ -6,9 +6,10 @@ import SideBar from './components/SideBar';
 import Navbar from './components/Navbar';
 import { DataContext } from './contexts/ContextProvider';
 import Ecomerce from './pages/Ecomerce';
-import Employees from './pages/Employees';
+import Captins from './pages/Captins';
 import './App.css';
-
+import Rides from './pages/Rides';
+import Users from './pages/Users';
 const App = () => {
   let { activemenu } = React.useContext(DataContext);
 
@@ -22,7 +23,9 @@ const App = () => {
           <div className="content-area">
             <Routes>
               <Route path="/ecommerce" element={<Ecomerce />} />
-              <Route path="/employees" element={<Employees />} />
+              <Route path="/Captins" element={<Captins />} />
+              <Route path="/Rides" element={<Rides />} />
+               <Route path="/Users" element={<Users />} />
             </Routes>
           </div>
         </div>

@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Button = ({color,bgColor,borderRadius,text,height,width,fontSize}) => {
+const Button = ({marginLeft,marginTop,onClick,color,bgColor,borderRadius,text,height,width,fontSize}) => {
   return (
     <button
+     onClick={onClick}
       style={{
+        marginTop: marginTop,
+        marginLeft: marginLeft,
         backgroundColor: bgColor,
         color: color,
         borderRadius: borderRadius,

@@ -13,7 +13,7 @@ const SideBar = () => {
       {activemenu && (<>
         <div className='flex font-extrabold  border-red-500 items-center justify-between p-3'>
           <Link to='/' onClick={()=>{}} className=' flex items-center gap-3 p-3 border-blue-500'>
-            <SiShopware /><span>Shoppy</span>
+            <SiShopware /><span>Uber</span>
           </Link>
           <TooltipComponent content={"Menu"} position="BottomCenter">
             <button type='button' onClick={()=>{setActiveMenu(false)}} className='hover:bg-gray-100 p-3 rounded-full'>

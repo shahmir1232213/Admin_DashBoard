@@ -33,7 +33,7 @@ export const gridOrderImage = (props) => (
   </div>
 );
 
-export const gridOrderStatus = (props) => (
+export const gridRidestatus = (props) => (
   <button
     type="button"
     style={{ background: props.StatusBg }}
@@ -391,7 +391,7 @@ export const LinePrimaryYAxis = {
   minorTickLines: { width: 0 },
 };
 
-export const customersGrid = [
+export const UsersGrid = [
   { type: 'checkbox', width: '50' },
   { headerText: 'Name',
     width: '150',
@@ -433,7 +433,7 @@ export const customersGrid = [
 
 ];
 
-export const employeesGrid = [
+export const captinGrid = [
   { headerText: 'Employee',
     width: '150',
     template: gridEmployeeProfile,
@@ -474,7 +474,7 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'ecommerce',
+        name: 'Uber',
         icon: <FiShoppingBag />,
       },
     ],
@@ -484,15 +484,15 @@ export const links = [
     title: 'Pages',
     links: [
       {
-        name: 'orders',
+        name: 'Rides',
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'employees',
+        name: 'Captins',
         icon: <IoMdContacts />,
       },
       {
-        name: 'customers',
+        name: 'Users',
         icon: <RiContactsLine />,
       },
     ],
@@ -618,7 +618,7 @@ export const earningData = [
     icon: <MdOutlineSupervisorAccount />,
     amount: '39,354',
     percentage: '-4%',
-    title: 'Customers',
+    title: 'Users',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
@@ -870,7 +870,7 @@ export const userProfileData = [
   },
 ];
 
-export const ordersGrid = [
+export const RidesGrid = [
   {
     headerText: 'Image',
     template: gridOrderImage,
@@ -899,7 +899,7 @@ export const ordersGrid = [
   },
   {
     headerText: 'Status',
-    template: gridOrderStatus,
+    template: gridRidestatus,
     field: 'OrderItems',
     textAlign: 'Center',
     width: '120',
@@ -919,7 +919,7 @@ export const ordersGrid = [
   },
 ];
 
-export const customersData = [
+export const UsersData = [
   {
     CustomerID: 1001,
     CustomerName: 'Nirav Joshi',
@@ -1481,7 +1481,7 @@ export const customersData = [
 
 ];
 
-export const employeesData = [
+export const CaptinsData = [
   {
     EmployeeID: 1,
     Name: 'Nancy Davolio',
@@ -2121,7 +2121,7 @@ export const employeesData = [
   },
 ];
 
-export const ordersData = [
+export const RidesData = [
   {
     OrderID: 10248,
     CustomerName: 'Vinet',
