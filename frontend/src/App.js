@@ -22,7 +22,7 @@ const App = () => {
           <Navbar />
           <div className="content-area">
             <Routes>
-              <Route path="/ecommerce" element={<Ecomerce />} />
+              <Route path="/uberAdmin" element={<Ecomerce />} />
               <Route path="/Captins" element={<Captins />} />
               <Route path="/Rides" element={<Rides />} />
                <Route path="/Users" element={<Users />} />

@@ -6,7 +6,15 @@ const getAllCaptins = async (req, res) => {
         SELECT * FROM CAPTIN 
     `
     captins = captins.recordset;
-    res.send(captins)
+    //  console.log("captins: ", captins);
+    return res.send(captins)
+}
+
+const availableCaptin = async (req, res) => {
+      let availableCaptins = await sql.query`SELECT * FROM View_AvailableCaptains`
+      //console.log("availableCaptins: ",availableCaptins)
+      availableCaptins = availableCaptins.recordset;
+      return res.send(availableCaptins);
 }
 
 const rightJoin = async (req, res) => {
@@ -25,11 +33,12 @@ const rightJoin = async (req, res) => {
     
     //console.log("captins: ", captins);
     captins = captins.recordset;
-   
+ 
     return res.status(200).json({captins})
 }
 
 module.exports = {
     getAllCaptins,
-    rightJoin
+    rightJoin,
+    availableCaptin
 }
