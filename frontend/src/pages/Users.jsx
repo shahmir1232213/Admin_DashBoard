@@ -12,7 +12,7 @@ const Users = () => {
   const leftJoinHandler = async () => {
     try {
       setFlag(false)
-      const response = await axios.get('http://localhost:3000/users/leftJoin')
+      const response = await axios.get('http://localhost:3004/users/leftJoin')
       setUserRides(response.data.users)
       console.log('User Rides leftJoinHandler:', response.data.users)
     } catch (error) {
@@ -23,7 +23,7 @@ const Users = () => {
     try {
       setFlag(false)
       setFlag2(true)
-      const response = await axios.get('http://localhost:3000/users/innerJoin')
+      const response = await axios.get('http://localhost:3004/users/innerJoin')
       setUserWithRides(response.data.users)
       console.log('Users innerJoinHandler:', response.data.users)
     } catch (error) {
@@ -34,7 +34,7 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/users/get')
+        const response = await axios.get('http://localhost:3004/users/get')
         setUsers(Array.isArray(response.data.users) ? response.data.users : [response.data.users])
       } catch (error) {
         console.error('Error fetching users:', error)

@@ -8,7 +8,7 @@ const Rides = () => {
   React.useEffect(() => {
     const fetchRides = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/rides/get');
+        const response = await axios.get('http://localhost:3004/rides/get');
         setRides(Array.isArray(response.data) ? response.data : [response.data]);
         console.log("rides: ",rides);
     } catch (error) {
@@ -36,6 +36,8 @@ const Rides = () => {
             <p className="text-center px-4">DESTINATION</p>
             <p className="text-center">FARE</p>
             <p className="text-center">STATUS</p>
+            <p className="text-center">DISTANCE</p>
+            <p className="text-center">DURATION</p>
           </div>
 
           {/* Ride Rows */}
@@ -58,7 +60,8 @@ const Rides = () => {
               <p className="text-center px-4 truncate max-w-[200px]">{ride.DESTINATION}</p>
               <p className="text-center truncate">{ride.FARE}</p>
               <p className="text-center truncate">{ride.STATUS}</p>
-              
+              <p className="text-center truncate">{ride.DISTANCE}</p>
+              <p className="text-center truncate">{ride.DURATION}</p>
             </div>
           ))}
         </div>

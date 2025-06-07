@@ -14,7 +14,7 @@ const Employees = () => {
   let rightJoinHandler = async () => {
     try {
       setFlag(false)
-      const response = await axios.get('http://localhost:3000/captins/rightJoin')
+      const response = await axios.get('http://localhost:3004/captins/rightJoin')
       setCaptinRides(response.data.captins)
       console.log('User Rides rightJoinHandler:', response.data.captins)
     } catch (error) {
@@ -24,7 +24,7 @@ const Employees = () => {
   
   async function availableCaptin(){
     try{
-      let response = await axios.get('http://localhost:3000/captins/available')
+      let response = await axios.get('http://localhost:3004/captins/available')
       console.log("availableCaptins: ",response.data)
       // let availableCaptins = await sql.query`SELECT * FROM View_AvailableCaptains`
       // console.log("availableCaptins: ",availableCaptins)
@@ -42,7 +42,7 @@ const Employees = () => {
   React.useEffect(() => {
     const fetchCaptins = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/captins/get');
+        const response = await axios.get('http://localhost:3004/captins/get');
         setCaptins(Array.isArray(response.data) ? response.data : [response.data]);
       } catch (error) {
         console.error('Error fetching captins:', error);

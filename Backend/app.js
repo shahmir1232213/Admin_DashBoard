@@ -16,6 +16,6 @@ app.use('/captins', captinRoutes);
 app.use('/rides',rideRoutes);
 app.use('/users',userRoutes)
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(3004, () => {
+  console.log('Server is running on port 3004');
 })

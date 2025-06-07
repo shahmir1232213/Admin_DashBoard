@@ -5,8 +5,9 @@ const getAllRides = async (req, res) => {
     let rides = await sql.query`
         SELECT * FROM RIDE 
     `
-   // console.log("rides: ", rides);
+    
     rides = rides.recordset;
+    console.log("rides: ", rides);
     res.send(rides)
 }
 module.exports = {
