@@ -474,7 +474,7 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'Uber',
+        name: 'uberAdmin',
         icon: <FiShoppingBag />,
       },
     ],

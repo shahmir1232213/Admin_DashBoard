@@ -26,17 +26,16 @@ const Rides = () => {
         <div className="min-w-[1400px] w-full h-full">
           {/* Sticky Header Row */}
           <div className="font-bold sticky top-0 w-full grid grid-cols-11 items-center border-b-2 border-gray-400 py-2 bg-white z-10">
+           
             <p className="text-center">RIDE_ID</p>
             <p className="text-center">USER_ID</p>
+            <p className="text-center">CAPTIN</p>
             <p className="text-center">CAPTIN_ID</p>
             <p className="text-center">VEHICLE_TYPE</p>
             <p className="text-center px-4">PICKUP</p>
             <p className="text-center px-4">DESTINATION</p>
             <p className="text-center">FARE</p>
             <p className="text-center">STATUS</p>
-            <p className="text-center">DURATION</p>
-            <p className="text-center">DISTANCE</p>
-            <p className="text-center">CAPTIN</p>
           </div>
 
           {/* Ride Rows */}
@@ -45,27 +44,21 @@ const Rides = () => {
               key={index}
               className="hover:bg-gray-100 rounded-[0.5rem] grid grid-cols-11 items-center border-b border-gray-400 py-2"
             >
+              
               <p className="text-center truncate">{ride.RIDE_ID}</p>
               <p className="text-center truncate">{ride.USER_ID}</p>
+              <img
+                className="mx-auto h-10 w-10 object-cover rounded-full"
+                src="/images/dp.jpeg"
+                alt="captain"
+              />
               <p className="text-center truncate">{ride.CAPTIN_ID}</p>
               <p className="text-center truncate">{ride.VEHICLE_TYPE}</p>
               <p className="text-center px-4 truncate max-w-[200px]">{ride.PICKUP}</p>
               <p className="text-center px-4 truncate max-w-[200px]">{ride.DESTINATION}</p>
               <p className="text-center truncate">{ride.FARE}</p>
               <p className="text-center truncate">{ride.STATUS}</p>
-              <p className="text-center truncate">{ride.DURATION}</p>
-              <p className="text-center truncate">{ride.DISTANCE}</p>
-              <div className="flex justify-center">
-                {ride.CAPTIN ? (
-                  <img
-                    src={ride.CAPTIN}
-                    alt="captin"
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                ) : (
-                  <span className="text-gray-400">No Image</span>
-                )}
-              </div>
+              
             </div>
           ))}
         </div>

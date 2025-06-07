@@ -87,13 +87,12 @@ const Employees = () => {
             <div className="min-w-[1200px] w-full h-full">
               {/* Sticky Header Row */}
               <div className="font-bold sticky top-0 w-full grid grid-cols-7 items-center border-b-2 border-gray-400 py-2 bg-white z-10">
-                <p className="text-center">CAPTIN_ID</p>
-                <p className="text-center">FIRST_NAME</p>
-                <p className="text-center">LAST_NAME</p>
+                <p className="text-center">CAPTIN ID</p>
+                 <p className="text-center">CAPTIN</p>
+                <p className="text-center">FIRST NAME</p>
+                <p className="text-center">LAST NAME</p>
                 <p className="text-center">EMAIL</p>
-                <p className="text-center">Location</p>
-                <p className="text-center">SATTUS</p>
-                <p className="text-center">CAPTIN</p>
+                <p className="text-center">SATTUS</p> 
               </div>
               {/* Captin Rows */}
               {captins && captins.map((captin, index) => (
@@ -102,21 +101,17 @@ const Employees = () => {
                   className="hover:bg-gray-100 rounded-[0.5rem] grid grid-cols-7 items-center border-b border-gray-400 py-2"
                 >
                   <p className="text-center truncate">{captin.CAPTIN_ID}</p>
+                  <img
+                className="mx-auto h-10 w-10 object-cover rounded-full"
+                src="/images/dp.jpeg"
+                alt="captain"
+              />
                   <p className="text-center truncate">{captin.FIRST_NAME}</p>
                   <p className="text-center truncate">{captin.LAST_NAME}</p>
                   <p className="text-center truncate">{captin.EMAIL}</p>
-                  <p className="text-center truncate">{captin.Location}</p>
                   <p className="text-center truncate">{captin.STATUS}</p>
                   <div className="flex justify-center">
-                    {captin.CAPTIN ? (
-                      <img
-                        src={captin.CAPTIN}
-                        alt="captin"
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                    ) : (
-                      <span className="text-gray-400">No Image</span>
-                    )}
+                  
                   </div>
                 </div>
               ))}
@@ -147,13 +142,12 @@ const Employees = () => {
             <div className="min-w-[1200px] w-full h-full">
               {/* Sticky Header Row */}
               <div className="font-bold sticky top-0 w-full grid grid-cols-7 items-center border-b-2 border-gray-400 py-2 bg-white z-10">
-                <p className="text-center">CAPTIN_ID</p>
-                <p className="text-center">FIRST_NAME</p>
-                <p className="text-center">LAST_NAME</p>
+                <p className="text-center">CAPTIN ID</p>
+                <p className="text-center">FIRST NAME</p>
+                <p className="text-center">LAST NAME</p>
                 <p className="text-center">EMAIL</p>
                 <p className="text-center">Location</p>
                 <p className="text-center">SATTUS</p>
-                <p className="text-center">CAPTIN</p>
               </div>
               {/* Captin Rows */}
               {availableCaptins && availableCaptins.map((captin, index) => (
@@ -162,22 +156,15 @@ const Employees = () => {
                   className="hover:bg-gray-100 rounded-[0.5rem] grid grid-cols-7 items-center border-b border-gray-400 py-2"
                 >
                   <p className="text-center truncate">{captin.CAPTIN_ID}</p>
+                  <img
+                    className="mx-auto h-10 w-10 object-cover rounded-full"
+                    src="/images/dp.jpeg"
+                    alt="captain"
+                  />
                   <p className="text-center truncate">{captin.FIRST_NAME}</p>
                   <p className="text-center truncate">{captin.LAST_NAME}</p>
                   <p className="text-center truncate">{captin.EMAIL}</p>
-                  <p className="text-center truncate">{captin.Location}</p>
                   <p className="text-center truncate">{captin.STATUS}</p>
-                  <div className="flex justify-center">
-                    {captin.CAPTIN ? (
-                      <img
-                        src={captin.CAPTIN}
-                        alt="captin"
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                    ) : (
-                      <span className="text-gray-400">No Image</span>
-                    )}
-                  </div>
                 </div>
               ))}
             </div>
