@@ -9,8 +9,18 @@ const Employees = () => {
   const [availableFlag, setAvailableFlag] = useState(false)
   const [captinRides, setCaptinRides] = useState([])
   const [availableCaptins, setAvailableCaptins] = useState([])
-  
+  const [deleteState, setDeleteState] = useState(false) 
 
+  const deleteCaptin = async () => {
+    try {
+      const response = await axios.post('http://localhost:3004/captins/delete',{deleteId: deleteState});
+      console.log('Delete Captin Response:', response.data);
+      const fetchCaptins = await axios.get('http://localhost:3004/captins/get');
+      setCaptins(fetchCaptins.data);
+    } catch (error) {
+      console.error('Error deleting captin:', error);
+    }
+  }
   let rightJoinHandler = async () => {
     try {
       setFlag(false)
@@ -71,6 +81,18 @@ const Employees = () => {
             fontSize="1.3rem"
             marginLeft="1rem"
           />
+          <Button
+            onClick={deleteCaptin}
+            color="white"
+            bgColor="#FC6C85"
+            text="Delete Captin"  
+            borderRadius="9px"
+            height="3rem"
+            width="24%"
+            marginTop="1rem"
+            fontSize="1.3rem"
+            marginLeft="1rem"
+          />
            <Button
             onClick={availableCaptin}
             color="white"
@@ -97,6 +119,11 @@ const Employees = () => {
               {/* Captin Rows */}
               {captins && captins.map((captin, index) => (
                 <div
+                  onClick={() => {
+                    setDeleteState(captin.CAPTIN_ID)
+                    console.log("deleteState: ", deleteState)
+
+                  }}
                   key={index}
                   className="hover:bg-gray-100 rounded-[0.5rem] grid grid-cols-7 items-center border-b border-gray-400 py-2"
                 >

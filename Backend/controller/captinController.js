@@ -1,5 +1,4 @@
 const sql = require('mssql/msnodesqlv8');
-
 const getAllCaptins = async (req, res) => {
     //console.log('Fetching all captains');
     let captins = await sql.query`
@@ -37,8 +36,24 @@ const rightJoin = async (req, res) => {
     return res.status(200).json({captins})
 }
 
+const deleteCaptin = async (req, res) => {
+    const { deleteId } = req.body;
+    console.log("deleteId: ", deleteId);
+    try {
+        await sql.query`DELETE FROM RIDE WHERE CAPTIN_ID = ${deleteId}`;
+        await sql.query`DELETE FROM VEHICLE WHERE CAPTIN_ID = ${deleteId}`;
+        await sql.query`DELETE FROM CAPTIN WHERE CAPTIN_ID = ${deleteId}`;
+        console.log("Captin deleted successfully");
+        return res.status(200).json({ message: 'Captin deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting captin:', error);
+        return res.status(500).json({ error: 'Failed to delete captin' });
+    }
+}
+
 module.exports = {
     getAllCaptins,
     rightJoin,
-    availableCaptin
+    availableCaptin,
+    deleteCaptin
 }

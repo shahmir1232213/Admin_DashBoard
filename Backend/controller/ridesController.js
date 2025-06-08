@@ -7,7 +7,7 @@ const getAllRides = async (req, res) => {
     `
     
     rides = rides.recordset;
-    console.log("rides: ", rides);
+   // console.log("rides: ", rides);
     res.send(rides)
 }
 module.exports = {
