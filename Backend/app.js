@@ -7,7 +7,7 @@ const cors = require('cors');
 const connectToSQLServer = require('./config/sql');
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Adjust this to your frontend URL
+    origin: 'http://localhost:3001', // Adjust this to your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
 }))
 app.use(express.json());

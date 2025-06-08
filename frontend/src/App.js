@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import { DataContext } from './contexts/ContextProvider';
 import Ecomerce from './pages/Ecomerce';
 import Captins from './pages/Captins';
+import DeletedCaptins from './pages/DeletedCaptins';
 import './App.css';
 import Rides from './pages/Rides';
 import Users from './pages/Users';
@@ -25,7 +26,8 @@ const App = () => {
               <Route path="/uberAdmin" element={<Ecomerce />} />
               <Route path="/Captins" element={<Captins />} />
               <Route path="/Rides" element={<Rides />} />
-               <Route path="/Users" element={<Users />} />
+              <Route path="/Users" element={<Users />} />
+              <Route path="/DeletedCaptins" element={<DeletedCaptins/>} />
             </Routes>
           </div>
         </div>

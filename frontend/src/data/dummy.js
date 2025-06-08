@@ -495,6 +495,10 @@ export const links = [
         name: 'Users',
         icon: <RiContactsLine />,
       },
+      {
+        name: 'DeletedCaptins',
+        icon: <RiContactsLine />,
+      },
     ],
   },
   {

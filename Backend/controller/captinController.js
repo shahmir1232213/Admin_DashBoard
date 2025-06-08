@@ -51,9 +51,21 @@ const deleteCaptin = async (req, res) => {
     }
 }
 
+const getDeletedCaptins = async (req, res) => {
+    try {
+        let captins = await sql.query`SELECT * FROM DeletedCaptinsLog`;
+        captins = captins.recordset;
+        return res.status(200).send(captins);
+    } catch (error) {
+        console.error('Error fetching deleted captins:', error);
+        return res.status(500).json({ error: 'Failed to fetch deleted captins' });
+    }
+}
+
 module.exports = {
     getAllCaptins,
     rightJoin,
     availableCaptin,
-    deleteCaptin
+    deleteCaptin,
+    getDeletedCaptins
 }
